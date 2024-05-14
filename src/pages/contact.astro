@@ -1,0 +1,62 @@
+---
+import WidgetWrapper from "~/components/ui/WidgetWrapper.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import ItemGrid from "~/components/ui/ItemGrid.astro";
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+
+const isDark = false;
+---
+
+<Layout metadata={metadata}>
+
+  <HeroText tagline="" title="Let's Connect!" />
+  <div class="flex flex-wrap justify-center gap-x-6 sm:gap-x-12 lg:gap-x-24">
+  <WidgetWrapper
+  id=""
+  isDark={isDark}
+  containerClass={`max-w-xl mx-auto`}
+  bg=""
+  >
+    <ItemGrid
+      items={[
+        {
+          title: 'Discord',
+          description:
+            `
+
+            We are always looking forward to expand our hood, please feel free to join the discord server to become a volunteer/member of the fast-paced growing community of Chennai
+            <br>
+            <button class="btn-primary" style="margin-top: 10%">Join Us</button>
+            
+            `,
+          icon: 'tabler:brand-discord-filled',
+        },
+        {
+          title: 'Email',
+          description:
+          `
+          We are also looking out for sponsors to make this event a great success. For more information about the sponsorship, please feel free to
+          <br>
+          <a href="mailto:contact@bsideschennai.in" target="_blank"><button class="btn-primary" style="margin-top: 10%">Write Us</button></a>
+          
+          `,
+          icon: 'tabler:mail-filled',
+        },
+      ]},
+      columns=4
+      defaultIcon=""
+      classes={{
+        container: "",
+        title: "md:text-[1.3rem]",
+        icon: "text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0",
+      }}
+    />
+    </div>
+  <WidgetWrapper/>
+</Layout>
